@@ -1,0 +1,19 @@
+SET seconds TO 1
+
+
+
+DEFINE FUNCTION start():
+
+    move(0)
+
+    move(-90)
+
+    move(-180)
+
+    move(90)
+
+
+
+DEFINE FUNCTION move(degres):
+
+    chassis_ctrl.move_with_time(degres,seconds)
