@@ -16,16 +16,16 @@ def move():
     global s
 
     if keyboard.is_pressed('w'):  # if key 'w' is pressed
-        commande("chassis move x 0.5 y 0.0")
+        commande("chassis move x 0.5")
         
     if keyboard.is_pressed('s'):  # if key 's' is pressed
-       commande("chassis move x -0.5 y 0.0")
+       commande("chassis move x -0.5")
 
     if keyboard.is_pressed('d'):  # if key 'd' is pressed
-        commande("chassis move x 0.0 y 0.5")
+        commande("chassis move y 0.5")
 
     if keyboard.is_pressed('a'):  # if key 'a' is pressed
-        commande("chassis move x 0.0 y -0.5")
+        commande("chassis move y -0.5")
         
 def commande(message):
     msg = message
