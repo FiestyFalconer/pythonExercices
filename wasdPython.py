@@ -12,26 +12,29 @@ address = (host, int(port))
 # Establish a TCP connection with the control command port of the robot.
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+
 def move():
     global s
 
     if keyboard.is_pressed('w'):  # if key 'w' is pressed
         commande("chassis move x 0.5")
-        
+
     if keyboard.is_pressed('s'):  # if key 's' is pressed
-       commande("chassis move x -0.5")
+        commande("chassis move x -0.5")
 
     if keyboard.is_pressed('d'):  # if key 'd' is pressed
         commande("chassis move y 0.5")
 
     if keyboard.is_pressed('a'):  # if key 'a' is pressed
         commande("chassis move y -0.5")
-        
+
+
 def commande(message):
     msg = message
     msg += ';'
     print(msg)
     s.send(msg.encode('utf-8'))
+
 
 def main():
     print("Connecting...")
@@ -45,7 +48,6 @@ def main():
     print(buf.decode('utf-8'))
 
     while True:
-
         move()
 
         time.sleep(0.3)
